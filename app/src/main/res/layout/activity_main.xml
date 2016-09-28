@@ -11,12 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/imgLogo" />
+
     <TextView
         android:text="Current Location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:id="@+id/txtCurrLoc" />
+        android:id="@+id/txtCurrLoc"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp" />
+
     <!--<Button
             android:layout_width="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -26,33 +30,45 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:text="Address (when available)"
-        android:id="@+id/address_text"
-        android:layout_marginTop="10dp" />
+        android:id="@+id/txtAddress" />
+
     <TextView
         android:text="Select Radius:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:id="@+id/txtLocField" />
+        android:id="@+id/txtSelectRadius"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp" />
+
     <NumberPicker
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/kmPicker" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/btnNext"
         android:text="Next"
-        android:layout_gravity="center_horizontal" />
-    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location (when available)"
-        android:id="@+id/location_text"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnNext"/>
+
+    <TextView
+        android:text="Coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="15dp" />-->
+        android:id="@+id/txtLatitude"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:text="(when available)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/txtLongitude"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>
