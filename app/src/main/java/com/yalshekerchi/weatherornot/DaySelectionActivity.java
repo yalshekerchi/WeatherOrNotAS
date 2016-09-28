@@ -31,10 +31,9 @@ import android.view.View;
 import java.util.ArrayList;
 
 public class DaySelectionActivity extends AppCompatActivity {
-    //Get Variables passed from MainActivity
-    Bundle extras = getIntent().getExtras();
-    String valLatitude = extras.getString("valLatitude");
-    String valLongitude = extras.getString("valLongitude");
+    //MainActivity Variables
+    String valLatitude;
+    String valLongitude;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -45,6 +44,11 @@ public class DaySelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_selection);
+
+        //Get Variables passed from MainActivity
+        Bundle extras = getIntent().getExtras();
+        valLatitude = extras.getString("valLatitude");
+        valLongitude = extras.getString("valLongitude");
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
