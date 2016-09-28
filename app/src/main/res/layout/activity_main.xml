@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingTop="20dp"
     android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:paddingRight="8dp"
+    android:orientation="vertical">
     <ImageView
         android:contentDescription="The App Logo is placed here"
         android:layout_width="match_parent"
@@ -44,9 +44,9 @@
         android:textSize="25sp" />
 
     <NumberPicker
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/kmPicker" />
+        android:id="@+id/kmPicker"
+        android:layout_width="match_parent" />
 
     <Button
         android:text="Next"
