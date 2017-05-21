@@ -35,28 +35,6 @@
         android:id="@+id/txtAddress" />
 
     <TextView
-        android:text="Select Radius:"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtSelectRadius"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:layout_marginTop="15dp"
-        android:textSize="25sp" />
-
-    <NumberPicker
-        android:layout_height="wrap_content"
-        android:id="@+id/kmPicker"
-        android:layout_width="match_parent" />
-
-    <Button
-        android:text="Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btnNext"/>
-
-    <TextView
         android:text="Coordinates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

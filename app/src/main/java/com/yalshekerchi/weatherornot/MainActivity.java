@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 //Utility Libraries
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import android.view.View;
@@ -27,10 +28,21 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.ConnectionResult;
+import com.johnhiott.darkskyandroidlib.ForecastApi;
 
 //Geolocator Libraries
 import android.location.Geocoder;
 import android.location.Address;
+
+import com.johnhiott.darkskyandroidlib.RequestBuilder;
+import com.johnhiott.darkskyandroidlib.models.DataPoint;
+import com.johnhiott.darkskyandroidlib.models.Request;
+import com.johnhiott.darkskyandroidlib.models.WeatherResponse;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
@@ -58,8 +70,10 @@ public class MainActivity extends AppCompatActivity implements
     Geocoder geocoder;
     List<Address> addresses;
 
+    //Dark Sky API Key
+    java.lang.String DARK_SKY_API_KEY = "033525848b492ba1fc38edb5da6d0947";
+
     //UI Elements Variables
-    NumberPicker kmPicker;
     TextView txtAddress;
     TextView txtLatitude;
     TextView txtLongitude;
@@ -71,25 +85,24 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         Log.v(TAG, "OnCreate");
         updates = 0;
+
+        //Handle Location Permissions
         handlePermissionsAndGetLocation();
 
+        //Setup Dark Sky API
+        ForecastApi.create(DARK_SKY_API_KEY);
+
         //Setup Variables
-        kmPicker = (NumberPicker) findViewById(R.id.kmPicker);
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtLatitude = (TextView) findViewById(R.id.txtLatitude);
         txtLongitude = (TextView) findViewById(R.id.txtLongitude);
-        btnNext = (Button) findViewById(R.id.btnNext);
 
         //Disable Next Button
-        btnNext.setEnabled(false);
+        //btnNext.setEnabled(false);
 
         //Detect Button Clicks
-        btnNext.setOnClickListener(this);
+        //btnNext.setOnClickListener(this);
 
-        //Setup Values in the number picker
-        kmPicker.setValue(5);
-        kmPicker.setMinValue(1);
-        kmPicker.setMaxValue(20);
     }
 
     @Override
@@ -107,13 +120,13 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onClick(View v)
     {
-        if (v == btnNext)
-        {
-            Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
-            intent.putExtra("valLatitude", valLatitude);
-            intent.putExtra("valLongitude", valLongitude);
-            startActivity(intent);
-        }
+        //if (v == btnNext)
+        //{
+        //    Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
+        //    intent.putExtra("valLatitude", valLatitude);
+        //    intent.putExtra("valLongitude", valLongitude);
+        //    startActivity(intent);
+        //}
     }
 
     @Override
@@ -132,7 +145,6 @@ public class MainActivity extends AppCompatActivity implements
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-
 
     private void handlePermissionsAndGetLocation() {
         Log.v(TAG, "handlePermissionsAndGetLocation");
@@ -176,10 +188,11 @@ public class MainActivity extends AppCompatActivity implements
             txtAddress.setText(valAddress);
 
             //Enable Next Button
-            btnNext.setEnabled(true);
+            //btnNext.setEnabled(true);
+
+            //Get Weather
+            getWeatherResponse();
         }
-
-
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -218,6 +231,44 @@ public class MainActivity extends AppCompatActivity implements
             strAdd = "My Current location address: Cannot get Address!";
         }
         return strAdd;
+    }
+
+    private ArrayList<DataPoint> getWeatherResponse() {
+        final ArrayList<DataPoint> weatherList = new ArrayList<>();
+
+        RequestBuilder weather = new RequestBuilder();
+
+        Request request = new Request();
+        request.setLat(String.valueOf(valLatitude));
+        request.setLng(String.valueOf(valLongitude));
+        request.setUnits(Request.Units.AUTO);
+        request.setLanguage(Request.Language.ENGLISH);
+        request.addExcludeBlock(Request.Block.CURRENTLY);
+        request.addExcludeBlock(Request.Block.HOURLY);
+        request.addExcludeBlock(Request.Block.MINUTELY);
+        request.addExcludeBlock(Request.Block.ALERTS);
+        request.addExcludeBlock(Request.Block.FLAGS);
+
+        weather.getWeather(request, new Callback<WeatherResponse>() {
+            @Override
+            public void success(WeatherResponse weatherResponse, Response response) {
+                Log.d(TAG, "Temp: " + weatherResponse.getDaily().getSummary());
+
+                int numDays = weatherResponse.getDaily().getData().size();
+                for (int i = 0; i < numDays; i++)
+                {
+                    weatherList.add(weatherResponse.getDaily().getData().get(i));
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                Log.d(TAG, "Error while calling: " + retrofitError.getUrl());
+                Log.d(TAG, retrofitError.toString());
+            }
+        });
+
+        return weatherList;
     }
 
     @Override

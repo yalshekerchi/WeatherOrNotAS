@@ -21,6 +21,9 @@ public class ForecastDayObject {
     ForecastDayObject (String _minTemp, String _maxTemp, String _dayDesc, String _dayIcon){
         this(_minTemp, _maxTemp, _dayDesc, _dayIcon, null, null);
     }
+    ForecastDayObject (){
+        this(null, null, null, null, null, null);
+    }
 
     public String getMinTemperature() {
         return this.minTemperature;
