@@ -189,7 +189,6 @@ public class MainActivity extends AppCompatActivity implements
         request.addExcludeBlock(Request.Block.HOURLY);
         request.addExcludeBlock(Request.Block.MINUTELY);
         request.addExcludeBlock(Request.Block.ALERTS);
-        request.addExcludeBlock(Request.Block.FLAGS);
 
         weather.getWeather(request, new Callback<WeatherResponse>() {
             @Override
