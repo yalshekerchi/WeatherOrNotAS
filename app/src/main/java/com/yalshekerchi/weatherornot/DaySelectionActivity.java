@@ -1,33 +1,18 @@
 package com.yalshekerchi.weatherornot;
 
 //Support Libraries
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 //Utility Libraries
-import java.util.List;
-import java.util.Locale;
 import android.view.View;
-import android.Manifest;
 import android.util.Log;
 
 //Widget Libraries
-import android.widget.Toast;
-import android.widget.TextView;
-import android.widget.NumberPicker;
-import android.widget.Button;
 
 //Card View Libraries
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 
 import com.johnhiott.darkskyandroidlib.models.DataPoint;
 
@@ -43,7 +28,7 @@ public class DaySelectionActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private static String LOG_TAG = "DaySelectionActivity";
 
-    final ArrayList<DataPoint> weatherList = GlobalClass.weatherList;
+    final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

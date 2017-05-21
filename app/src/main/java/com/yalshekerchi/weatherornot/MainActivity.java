@@ -2,55 +2,47 @@ package com.yalshekerchi.weatherornot;
 
 //Support Libraries
 
-import android.app.Activity;
-import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-//Utility Libraries
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import android.view.View;
-import android.Manifest;
-import android.util.Log;
-
-//Widget Libraries
-import android.widget.Toast;
-import android.widget.TextView;
-import android.widget.Button;
-
-//Location Libraries
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
+import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.johnhiott.darkskyandroidlib.ForecastApi;
-
-//Geolocator Libraries
-import android.location.Geocoder;
-import android.location.Address;
-
 import com.johnhiott.darkskyandroidlib.RequestBuilder;
 import com.johnhiott.darkskyandroidlib.models.DataPoint;
 import com.johnhiott.darkskyandroidlib.models.Request;
 import com.johnhiott.darkskyandroidlib.models.WeatherResponse;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+
+//Utility Libraries
+//Widget Libraries
+//Location Libraries
+//Geolocator Libraries
 
 
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    public static final String TAG = "WEAVER_";
+    public static final String TAG = "MainActivity";
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
     //GPS Constant Permission
@@ -186,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void getWeatherResponse() {
         RequestBuilder weather = new RequestBuilder();
-        final ArrayList<DataPoint> weatherList = GlobalClass.weatherList;
+        final ArrayList<DataPoint> weatherList = new ArrayList<DataPoint>();
 
         Request request = new Request();
         request.setLat(String.valueOf(valLatitude));
@@ -217,6 +209,7 @@ public class MainActivity extends AppCompatActivity implements
                 Log.d(TAG, retrofitError.toString());
             }
         });
+        AppData.getInstance().setWeatherList(weatherList);
     }
 
     @Override
