@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements
 
     //Dark Sky API Key
     java.lang.String DARK_SKY_API_KEY = "033525848b492ba1fc38edb5da6d0947";
+    final ArrayList<DataPoint> weatherList = new ArrayList<>();
 
     //UI Elements Variables
     TextView txtAddress;
@@ -138,7 +139,9 @@ public class MainActivity extends AppCompatActivity implements
             txtLongitude.setText("Longitude:" + String.valueOf(valLongitude));
             txtAddress.setText(valAddress);
 
-            getWeatherResponse();
+            if (weatherList.size() == 0) {
+                getWeatherResponse();
+            }
         }
     }
 
@@ -166,8 +169,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void getWeatherResponse() {
-        final ArrayList<DataPoint> weatherList = new ArrayList<>();
-
         RequestBuilder weather = new RequestBuilder();
 
         Request request = new Request();
@@ -191,6 +192,11 @@ public class MainActivity extends AppCompatActivity implements
                 {
                     weatherList.add(weatherResponse.getDaily().getData().get(i));
                 }
+
+                Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
+                //intent.putExtra("valLatitude", valLatitude);
+                //intent.putExtra("valLongitude", valLongitude);
+                startActivity(intent);
             }
 
             @Override
@@ -199,11 +205,6 @@ public class MainActivity extends AppCompatActivity implements
                 Log.d(TAG, retrofitError.toString());
             }
         });
-
-        Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
-        intent.putExtra("valLatitude", valLatitude);
-        intent.putExtra("valLongitude", valLongitude);
-        startActivity(intent);
     }
 
     @Override

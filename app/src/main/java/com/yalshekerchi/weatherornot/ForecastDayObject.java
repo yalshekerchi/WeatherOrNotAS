@@ -1,6 +1,6 @@
 package com.yalshekerchi.weatherornot;
 
-public class ForecastDayObject {
+public class ForecastDayObject{
     private String minTemperature;
     private String maxTemperature;
     private String dayDescription;
