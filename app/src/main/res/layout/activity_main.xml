@@ -27,6 +27,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/get_address_button"
             android:text="Get Address" />-->
+
+    <Button
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnNext"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

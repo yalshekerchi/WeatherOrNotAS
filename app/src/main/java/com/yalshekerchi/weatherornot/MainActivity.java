@@ -3,6 +3,7 @@ package com.yalshekerchi.weatherornot;
 //Support Libraries
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
@@ -22,6 +23,7 @@ import android.util.Log;
 //Widget Libraries
 import android.widget.Toast;
 import android.widget.TextView;
+import android.widget.Button;
 
 //Location Libraries
 import android.location.Location;
@@ -70,12 +72,12 @@ public class MainActivity extends AppCompatActivity implements
 
     //Dark Sky API Key
     java.lang.String DARK_SKY_API_KEY = "033525848b492ba1fc38edb5da6d0947";
-    final ArrayList<DataPoint> weatherList = new ArrayList<>();
 
     //UI Elements Variables
     TextView txtAddress;
     TextView txtLatitude;
     TextView txtLongitude;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,13 @@ public class MainActivity extends AppCompatActivity implements
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtLatitude = (TextView) findViewById(R.id.txtLatitude);
         txtLongitude = (TextView) findViewById(R.id.txtLongitude);
+        btnNext = (Button) findViewById(R.id.btnNext);
+
+        //Detect Button Clicks
+        btnNext.setOnClickListener(this);
+
+        //Disable Next Button
+        btnNext.setEnabled(false);
 
         buildGoogleApiClient();
     }
@@ -121,7 +130,12 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-
+        if (v == btnNext) {
+            Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
+            intent.putExtra("valLatitude", valLatitude);
+            intent.putExtra("valLongitude", valLongitude);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -139,9 +153,11 @@ public class MainActivity extends AppCompatActivity implements
             txtLongitude.setText("Longitude:" + String.valueOf(valLongitude));
             txtAddress.setText(valAddress);
 
-            if (weatherList.size() == 0) {
+            if (btnNext.isEnabled() == false) {
                 getWeatherResponse();
             }
+            //Enable Next Button
+            btnNext.setEnabled(true);
         }
     }
 
@@ -170,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void getWeatherResponse() {
         RequestBuilder weather = new RequestBuilder();
+        final ArrayList<DataPoint> weatherList = GlobalClass.weatherList;
 
         Request request = new Request();
         request.setLat(String.valueOf(valLatitude));
@@ -192,11 +209,6 @@ public class MainActivity extends AppCompatActivity implements
                 {
                     weatherList.add(weatherResponse.getDaily().getData().get(i));
                 }
-
-                Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
-                //intent.putExtra("valLatitude", valLatitude);
-                //intent.putExtra("valLongitude", valLongitude);
-                startActivity(intent);
             }
 
             @Override

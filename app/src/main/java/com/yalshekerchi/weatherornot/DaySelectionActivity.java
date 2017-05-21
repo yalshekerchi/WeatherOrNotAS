@@ -28,30 +28,34 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import com.johnhiott.darkskyandroidlib.models.DataPoint;
+
 import java.util.ArrayList;
 
-public class DaySelectionActivity extends MainActivity {
+public class DaySelectionActivity extends AppCompatActivity {
     //MainActivity Variables
-    //String valLatitude;
-    //String valLongitude;
+    double valLatitude;
+    double valLongitude;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private static String LOG_TAG = "DaySelectionActivity";
 
+    final ArrayList<DataPoint> weatherList = GlobalClass.weatherList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_selection);
 
-        Log.d(TAG, "Temp: " + String.valueOf(valLatitude));
-
-
         //Get Variables passed from MainActivity
-        //Bundle extras = getIntent().getExtras();
-        //valLatitude = extras.getString("valLatitude");
-        //valLongitude = extras.getString("valLongitude");
+        Bundle extras = getIntent().getExtras();
+        valLatitude = extras.getDouble("valLatitude");
+
+
+        Log.i(LOG_TAG, " Clicked on Item " + weatherList.size());
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
