@@ -22,13 +22,9 @@ import android.util.Log;
 //Widget Libraries
 import android.widget.Toast;
 import android.widget.TextView;
-import android.widget.NumberPicker;
-import android.widget.Button;
 
 //Location Libraries
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.ConnectionResult;
@@ -55,18 +51,12 @@ public class MainActivity extends AppCompatActivity implements
     public static final String TAG = "WEAVER_";
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
-    //GPS Constant Permission=
+    //GPS Constant Permission
     private static final int MY_PERMISSION_ACCESS_COARSE_LOCATION = 11;
     private static final int MY_PERMISSION_ACCESS_FINE_LOCATION = 12;
 
-    //Position
-    private static final int LOCATION_REFRESH_TIME = 1000;  // 1s
-    private static final int LOCATION_REFRESH_DISTANCE = 50; // 50m
-
     /* GPS */
     private Location mLastLocation;
-    public LocationManager mLocationManager;
-    int updates;
     double valLatitude;
     double valLongitude;
     String valAddress;
@@ -85,26 +75,12 @@ public class MainActivity extends AppCompatActivity implements
     TextView txtAddress;
     TextView txtLatitude;
     TextView txtLongitude;
-    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v(TAG, "OnCreate");
-        updates = 0;
-
-        //Handle Location Permissions
-        //handlePermissionsAndGetLocation();
-
-        // Create an instance of GoogleAPIClient.
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }
 
         //Setup Dark Sky API
         ForecastApi.create(DARK_SKY_API_KEY);
@@ -113,12 +89,6 @@ public class MainActivity extends AppCompatActivity implements
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtLatitude = (TextView) findViewById(R.id.txtLatitude);
         txtLongitude = (TextView) findViewById(R.id.txtLongitude);
-
-        //Disable Next Button
-        //btnNext.setEnabled(false);
-
-        //Detect Button Clicks
-        //btnNext.setOnClickListener(this);
 
         buildGoogleApiClient();
     }
@@ -138,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements
     public void onStart() {
         super.onStart();
         mGoogleApiClient.connect();
-
     }
 
     @Override
@@ -151,13 +120,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-        //if (v == btnNext)
-        //{
-        //    Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
-        //    intent.putExtra("valLatitude", valLatitude);
-        //    intent.putExtra("valLongitude", valLongitude);
-        //    startActivity(intent);
-        //}
+
     }
 
     @Override
