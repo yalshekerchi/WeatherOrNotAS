@@ -1,6 +1,8 @@
 package com.yalshekerchi.weatherornot;
 
 //Support Libraries
+
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
 import android.view.View;
 import android.Manifest;
 import android.util.Log;
@@ -26,8 +29,10 @@ import android.widget.Button;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.location.LocationServices;
 import com.johnhiott.darkskyandroidlib.ForecastApi;
 
 //Geolocator Libraries
@@ -45,7 +50,7 @@ import retrofit.client.Response;
 
 
 public class MainActivity extends AppCompatActivity implements
-        View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
+        View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     public static final String TAG = "WEAVER_";
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
@@ -70,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements
     Geocoder geocoder;
     List<Address> addresses;
 
+    //Google Play Services API
+    private GoogleApiClient mGoogleApiClient;
+
     //Dark Sky API Key
     java.lang.String DARK_SKY_API_KEY = "033525848b492ba1fc38edb5da6d0947";
 
@@ -87,7 +95,16 @@ public class MainActivity extends AppCompatActivity implements
         updates = 0;
 
         //Handle Location Permissions
-        handlePermissionsAndGetLocation();
+        //handlePermissionsAndGetLocation();
+
+        // Create an instance of GoogleAPIClient.
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
 
         //Setup Dark Sky API
         ForecastApi.create(DARK_SKY_API_KEY);
@@ -103,23 +120,37 @@ public class MainActivity extends AppCompatActivity implements
         //Detect Button Clicks
         //btnNext.setOnClickListener(this);
 
+        buildGoogleApiClient();
+    }
+
+    /**
+     * Builds a GoogleApiClient. Uses the addApi() method to request the LocationServices API.
+     */
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        mGoogleApiClient.connect();
 
     }
 
     @Override
     public void onStop() {
         super.onStop();
-
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
     }
 
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         //if (v == btnNext)
         //{
         //    Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
@@ -130,85 +161,23 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //Accepted
-                    getLocation();
-                } else {
-                    // Denied
-                    Toast.makeText(MainActivity.this, "LOCATION Denied", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onConnected(Bundle connectionHint) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_ACCESS_FINE_LOCATION);
         }
-    }
-
-    private void handlePermissionsAndGetLocation() {
-        Log.v(TAG, "handlePermissionsAndGetLocation");
-        int hasWriteContactsPermission = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
-        if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    REQUEST_CODE_ASK_PERMISSIONS);
-            return;
-        }
-        getLocation();//if already has permission
-    }
-
-    protected void getLocation() {
-        Log.v(TAG, "GetLocation");
-        int LOCATION_REFRESH_TIME = 1000;
-        int LOCATION_REFRESH_DISTANCE = 5;
-
-        if (!(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
-            Log.v("WEAVER_", "Has permission");
-            mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
-                    LOCATION_REFRESH_DISTANCE, mLocationListener);
-        } else {
-            Log.v("WEAVER_", "Does not have permission");
-        }
-
-    }
-
-    private final LocationListener mLocationListener = new LocationListener() {
-        @Override
-        public void onLocationChanged(Location location) {
-            System.out.println("onLocationChanged");
-            mLastLocation = location;
-
-            valLatitude = location.getLatitude();
-            valLongitude = location.getLongitude();
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if (mLastLocation != null) {
+            valLatitude = mLastLocation.getLatitude();
+            valLongitude = mLastLocation.getLongitude();
             valAddress = getCompleteAddressString(valLatitude, valLongitude);
 
-            txtLatitude.setText("Latitude:" + String.valueOf(valLatitude)) ;
+            txtLatitude.setText("Latitude:" + String.valueOf(valLatitude));
             txtLongitude.setText("Longitude:" + String.valueOf(valLongitude));
             txtAddress.setText(valAddress);
 
-            //Enable Next Button
-            //btnNext.setEnabled(true);
-
-            //Get Weather
             getWeatherResponse();
         }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-
-        }
-    };
+    }
 
     private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
         String strAdd;
@@ -233,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements
         return strAdd;
     }
 
-    private ArrayList<DataPoint> getWeatherResponse() {
+    private void getWeatherResponse() {
         final ArrayList<DataPoint> weatherList = new ArrayList<>();
 
         RequestBuilder weather = new RequestBuilder();
@@ -268,21 +237,24 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        return weatherList;
+        Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
+        intent.putExtra("valLatitude", valLatitude);
+        intent.putExtra("valLongitude", valLongitude);
+        startActivity(intent);
     }
 
     @Override
-    public void onConnected(Bundle bundle) {
-
+    public void onConnectionFailed(ConnectionResult result) {
+        // Refer to the javadoc for ConnectionResult to see what error codes might be returned in
+        // onConnectionFailed.
+        Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
     }
 
     @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
+    public void onConnectionSuspended(int cause) {
+        // The connection to Google Play services was lost for some reason. We call connect() to
+        // attempt to re-establish the connection.
+        Log.i(TAG, "Connection suspended");
+        mGoogleApiClient.connect();
     }
 }
