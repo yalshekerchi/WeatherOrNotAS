@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class DaySelectionActivity extends AppCompatActivity {
     //MainActivity Variables
-    double valLatitude;
-    double valLongitude;
+    //double valLatitude;
+    //double valLongitude;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -36,46 +36,38 @@ public class DaySelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_day_selection);
 
         //Get Variables passed from MainActivity
-        Bundle extras = getIntent().getExtras();
-        valLatitude = extras.getDouble("valLatitude");
+        //Bundle extras = getIntent().getExtras();
+        //valLatitude = extras.getDouble("valLatitude");
 
-
-        Log.i(LOG_TAG, " Clicked on Item " + weatherList.size());
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        //Setup RecyclerView
+        mRecyclerView = (RecyclerView) findViewById(R.id.weatherRecyclerView);
         mRecyclerView.setHasFixedSize(true);
+
+        //Setup RecyclerView Layout Manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new MyRecyclerViewAdapter(getDataSet());
+
+
+        mAdapter = new WeatherRecyclerViewAdapter(AppData.getInstance().getWeatherList());
         mRecyclerView.setAdapter(mAdapter);
 
         // Code to Add an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).addItem(obj, index);
+        //((WeatherRecyclerViewAdapter) mAdapter).addItem(obj, index);
 
         // Code to remove an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).deleteItem(index);
+        //((WeatherRecyclerViewAdapter) mAdapter).deleteItem(index);
     }
 
 
-    @Override
+    /*@Override
     protected void onResume() {
         super.onResume();
-        ((MyRecyclerViewAdapter) mAdapter).setOnItemClickListener(new MyRecyclerViewAdapter
+        ((WeatherRecyclerViewAdapter) mAdapter).setOnItemClickListener(new WeatherRecyclerViewAdapter
                 .MyClickListener() {
             @Override
             public void onItemClick(int position, View v) {
                 Log.i(LOG_TAG, " Clicked on Item " + position);
             }
         });
-    }
-
-    private ArrayList<DataObject> getDataSet() {
-        ArrayList results = new ArrayList<DataObject>();
-        for (int index = 0; index < 20; index++) {
-            DataObject obj = new DataObject("Some Primary Text " + index,
-                    "Secondary " + index);
-            results.add(index, obj);
-        }
-        return results;
-    }
+    }*/
 }
