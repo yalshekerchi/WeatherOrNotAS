@@ -45,6 +45,9 @@ public class WeatherRecyclerViewAdapter extends
                 @Override public void onClick(View v) {
                     // item clicked
                     Log.d(TAG, "Item Clicked");
+                    // TODO: create intent and move to third activity (then read from AppData's dictionary key)--list the place IDs
+                    // TODO: place the dictionary value in Google Map API's navigation
+                    // TODO: https://developers.google.com/maps/documentation/urls/android-intents
                     Log.d(TAG, weatherIcon);
                 }
             });

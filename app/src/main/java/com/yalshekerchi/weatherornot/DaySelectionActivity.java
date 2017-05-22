@@ -23,8 +23,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 //Utility Libraries
 //Widget Libraries
@@ -40,31 +38,18 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
     // webservices API
     private static final String placesAPIKey = "AIzaSyDf0oPYWc5ePlr-CfyuAv75AbB7uHRdpSg";
 
-    private static final int TEMP_RADIUS = 10000;
+    private static final int TEMP_RADIUS = 1000;
 
     final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
     double latitude = AppData.getInstance().getLatitude();
     double longitude = AppData.getInstance().getLongitude();
-
-    Map<String, String[]> iconMap = new HashMap<String, String[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_selection);
 
-        // iconMap initialization
-        iconMap.put("clear-day", new String[] {"amusement_park", "zoo", "campground", "park", "stadium" } );
-        iconMap.put("clear-night", iconMap.get("clear-day"));
-        iconMap.put("partly-cloudy-day", new String[] { "night_club", "restaurant", "rv_park", "cafe", "florist"});
-        iconMap.put("partly-cloudy-night", iconMap.get("partly-cloudy-day"));
-        iconMap.put("cloudy-day", new String[] { "night_club", "restaurant", "rv_park", "cafe", "florist"});
-        iconMap.put("cloudy-night", iconMap.get("cloudy-day"));
-        iconMap.put("rain", new String[] { "art_gallery", "bowling_alley", "movie_theater", "aquarium", "bar" });
-        iconMap.put("snow", iconMap.get("rain"));
-        iconMap.put("sleet", iconMap.get("rain"));
-        iconMap.put("wind", new String[] { "library", "museum", "shopping_mall", "bookstore", "gym" });
-        iconMap.put("fog", iconMap.get("wind"));
+
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -73,10 +58,11 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
                 for (int i = 0; i < weatherList.size(); i++) {
                     Log.d(LOG_TAG, "LIST NUMBER: " + i);
                     String icon = weatherList.get(i).getIcon();
-                    String[] vals = iconMap.get(icon);
+                    String[] vals = AppData.getInstance().getIconMap().get(icon);
                     for (int j = 0; j < vals.length; j++) {
                         Log.d(LOG_TAG, "TYPE: " + vals[j]);
                         getPlaces(latitude, longitude, TEMP_RADIUS, vals[j]);
+                        // TODO: create final map structure { 1, {id1, id2, ...}
                     }
                 }
             }
