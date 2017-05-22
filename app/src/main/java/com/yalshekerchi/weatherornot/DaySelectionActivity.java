@@ -130,7 +130,7 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
         try {
             // set query string
             String urlStr = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-            urlStr += "key=AIzaSyDf0oPYWc5ePlr-CfyuAv75AbB7uHRdpSg" + AMPERSAND;
+            urlStr += "key=" + placesAPIKey + AMPERSAND;
             urlStr += "location=" + latitude + "," + longitude + AMPERSAND;
             urlStr += "radius=1000";
             // open connection
