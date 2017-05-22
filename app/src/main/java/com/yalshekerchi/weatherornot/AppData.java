@@ -1,5 +1,6 @@
 package com.yalshekerchi.weatherornot;
 
+import com.google.android.gms.location.places.Place;
 import com.johnhiott.darkskyandroidlib.models.DataPoint;
 
 import java.util.ArrayList;
@@ -16,6 +17,9 @@ public class AppData {
     private ArrayList<DataPoint> weatherList;
     private Map<Integer, Integer> schedule;
     private Map<String, String[]> iconMap = new HashMap<String, String[]>();
+    private Map<Integer, ArrayList<String>> resultMap = new HashMap<Integer, ArrayList<String>>();
+    private Map<Integer, ArrayList<Place>> placeMap = new HashMap<Integer, ArrayList<Place>>();
+
     private static final AppData appdata = new AppData();
 
     {
@@ -34,13 +38,15 @@ public class AppData {
     }
 
 
-    public static AppData getInstance() { return appdata; }
+    public static AppData getInstance() {return appdata;}
+
     public ArrayList<DataPoint> getWeatherList() {
         return weatherList;
     }
     public void setWeatherList(ArrayList<DataPoint> weatherList) {
         this.weatherList = weatherList;
     }
+
     public Map<Integer, Integer> getSchedule() {
         return schedule;
     }
@@ -51,15 +57,35 @@ public class AppData {
     public double getLatitude() {
         return latitude;
     }
-
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
+
     public double getLongitude() {
         return longitude;
     }
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
-    public Map<String, String[]> getIconMap() { return this.iconMap; }
+
+    public Map<String, String[]> getIconMap() {
+        return this.iconMap;
+    }
+    public void setIconMap(Map<String, String[]> iconMap) {
+        this.iconMap = iconMap;
+    }
+
+    public Map<Integer, ArrayList<String>> getResultMap() {
+        return resultMap;
+    }
+    public void setResultMap(Map<Integer, ArrayList<String>> resultMap) {
+        this.resultMap = resultMap;
+    }
+
+    public Map<Integer, ArrayList<Place>> getPlaceMap() {
+        return placeMap;
+    }
+    public void setPlaceMap(Map<Integer, ArrayList<Place>> placeMap) {
+        this.placeMap = placeMap;
+    }
 }

@@ -1,5 +1,7 @@
 package com.yalshekerchi.weatherornot;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -31,6 +33,7 @@ public class WeatherRecyclerViewAdapter extends
         TextView txtWeatherDescription;
         ImageView imgWeatherIcon;
         String weatherIcon;
+        int position;
 
         WeatherDayHolder(View itemView) {
             super(itemView);
@@ -43,19 +46,22 @@ public class WeatherRecyclerViewAdapter extends
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
+                    Context context = v.getContext();
+
                     // item clicked
-                    Log.d(TAG, "Item Clicked");
-                    // TODO: create intent and move to third activity (then read from AppData's dictionary key)--list the place IDs
-                    // TODO: place the dictionary value in Google Map API's navigation
-                    // TODO: https://developers.google.com/maps/documentation/urls/android-intents
+                    Log.d(TAG, "Item Clicked" + String.valueOf(position));
                     Log.d(TAG, weatherIcon);
+
+                    Intent intent = new Intent(context, PlaceSelectionActivity.class);
+                    intent.putExtra("position", position);
+                    context.startActivity(intent);
                 }
             });
         }
     }
 
-    WeatherRecyclerViewAdapter(ArrayList<DataPoint> weatherList){
-        this.weatherDayList = weatherList;
+    WeatherRecyclerViewAdapter(ArrayList<DataPoint> weatherDayList){
+        this.weatherDayList = weatherDayList;
     }
 
     @Override
@@ -65,12 +71,14 @@ public class WeatherRecyclerViewAdapter extends
 
     @Override
     public WeatherDayHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_row, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.weather_card_view_row, viewGroup, false);
         return new WeatherDayHolder(view);
     }
 
     @Override
     public void onBindViewHolder(WeatherDayHolder weatherDayHolder, int position) {
+        weatherDayHolder.position = position;
+
         int tempHigh = (int)(weatherDayList.get(position).getApparentTemperatureMax() + 0.5);
         int tempLow = (int)(weatherDayList.get(position).getApparentTemperatureMin() + 0.5);
         weatherDayHolder.txtTempHigh.setText(String.valueOf(tempHigh) + "\u00B0");
