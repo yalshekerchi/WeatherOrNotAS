@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onClick(View v) {
         if (v == btnNext) {
-            Intent intent = new Intent(getApplicationContext(), DaySelectionActivity.class);
+            Intent intent = new Intent(MainActivity.this, DaySelectionActivity.class);
             intent.putExtra("valLatitude", valLatitude);
             intent.putExtra("valLongitude", valLongitude);
             startActivity(intent);
