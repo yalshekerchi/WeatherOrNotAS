@@ -21,7 +21,7 @@ public class WeatherRecyclerViewAdapter extends
 
     //Declare member variables
     private ArrayList<DataPoint> weatherDayList;
-    public static final String TAG = "WEAVER_";
+    public static final String TAG = "WRViewAdapter";
 
     public static class WeatherDayHolder extends RecyclerView.ViewHolder {
         CardView weatherCardView;
@@ -30,6 +30,7 @@ public class WeatherRecyclerViewAdapter extends
         TextView txtDate;
         TextView txtWeatherDescription;
         ImageView imgWeatherIcon;
+        String weatherIcon;
 
         WeatherDayHolder(View itemView) {
             super(itemView);
@@ -44,6 +45,7 @@ public class WeatherRecyclerViewAdapter extends
                 @Override public void onClick(View v) {
                     // item clicked
                     Log.d(TAG, "Item Clicked");
+                    Log.d(TAG, weatherIcon);
                 }
             });
         }
@@ -72,32 +74,32 @@ public class WeatherRecyclerViewAdapter extends
         weatherDayHolder.txtTempLow.setText(String.valueOf(tempLow) + "\u00B0");
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMM d yyyy", Locale.getDefault());
-        Date dateFormat = new java.util.Date(weatherDayList.get(position).getTime() * 1000L);
+        Date dateFormat = new Date(weatherDayList.get(position).getTime() * 1000L);
         weatherDayHolder.txtDate.setText(simpleDateFormat.format(dateFormat));
 
         String weatherDesc = weatherDayList.get(position).getSummary();
         weatherDayHolder.txtWeatherDescription.setText(weatherDesc);
 
-        String iconVal = weatherDayList.get(position).getIcon();
-        if (iconVal.equals("clear-day")) {
+        weatherDayHolder.weatherIcon = weatherDayList.get(position).getIcon();
+        if (weatherDayHolder.weatherIcon.equals("clear-day")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_sun);
-        } else if (iconVal.equals("clear-night")) {
+        } else if (weatherDayHolder.weatherIcon.equals("clear-night")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_moon);
-        } else if (iconVal.equals("rain")) {
+        } else if (weatherDayHolder.weatherIcon.equals("rain")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_rain);
-        } else if (iconVal.equals("snow")) {
+        } else if (weatherDayHolder.weatherIcon.equals("snow")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_snow);
-        } else if (iconVal.equals("sleet")) {
+        } else if (weatherDayHolder.weatherIcon.equals("sleet")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_hail);
-        } else if (iconVal.equals("wind")) {
+        } else if (weatherDayHolder.weatherIcon.equals("wind")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_wind);
-        } else if (iconVal.equals("fog")) {
+        } else if (weatherDayHolder.weatherIcon.equals("fog")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_fog);
-        } else if (iconVal.equals("cloudy")) {
+        } else if (weatherDayHolder.weatherIcon.equals("cloudy")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud);
-        } else if (iconVal.equals("partly-cloudy-day")) {
+        } else if (weatherDayHolder.weatherIcon.equals("partly-cloudy-day")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_sun);
-        } else if (iconVal.equals("partly-cloudy-night")) {
+        } else if (weatherDayHolder.weatherIcon.equals("partly-cloudy-night")) {
             weatherDayHolder.imgWeatherIcon.setImageResource(R.drawable.ic_cloud_moon);
         }
     }

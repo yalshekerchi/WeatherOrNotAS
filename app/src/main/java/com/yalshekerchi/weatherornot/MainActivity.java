@@ -124,8 +124,6 @@ public class MainActivity extends AppCompatActivity implements
     public void onClick(View v) {
         if (v == btnNext) {
             Intent intent = new Intent(MainActivity.this, DaySelectionActivity.class);
-            intent.putExtra("valLatitude", valLatitude);
-            intent.putExtra("valLongitude", valLongitude);
             startActivity(intent);
         }
     }
@@ -139,6 +137,8 @@ public class MainActivity extends AppCompatActivity implements
         if (mLastLocation != null) {
             valLatitude = mLastLocation.getLatitude();
             valLongitude = mLastLocation.getLongitude();
+            AppData.getInstance().setLatitude(valLatitude);
+            AppData.getInstance().setLongitude(valLongitude);
             valAddress = getCompleteAddressString(valLatitude, valLongitude);
 
             txtLatitude.setText("Latitude:" + String.valueOf(valLatitude));

@@ -10,6 +10,8 @@ import java.util.Map;
  */
 
 public class AppData {
+    private double latitude;
+    private double longitude;
     private ArrayList<DataPoint> weatherList;
     private Map<Integer, Integer> schedule;
     private static final AppData appdata = new AppData();
@@ -26,5 +28,19 @@ public class AppData {
     }
     public void setSchedule(Map<Integer, Integer> schedule) {
         this.schedule = schedule;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+    public double getLongitude() {
+        return longitude;
+    }
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

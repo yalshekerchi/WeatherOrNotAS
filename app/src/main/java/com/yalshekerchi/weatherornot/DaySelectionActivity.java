@@ -15,10 +15,7 @@ import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.places.Places;
 import com.johnhiott.darkskyandroidlib.models.DataPoint;
-
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,14 +23,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 //Utility Libraries
 //Widget Libraries
 //Card View Libraries
 
 public class DaySelectionActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    double latitude;
-    double longitude;
     // RecyclerView
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -43,34 +40,45 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
     // webservices API
     private static final String placesAPIKey = "AIzaSyDf0oPYWc5ePlr-CfyuAv75AbB7uHRdpSg";
 
-    final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
+    private static final int TEMP_RADIUS = 10000;
 
-    private GoogleApiClient mGoogleApiClient;
+    final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
+    double latitude = AppData.getInstance().getLatitude();
+    double longitude = AppData.getInstance().getLongitude();
+
+    Map<String, String[]> iconMap = new HashMap<String, String[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_selection);
 
-        // setup google API client
-        mGoogleApiClient = new GoogleApiClient
-                .Builder(this)
-                .addApi(Places.GEO_DATA_API)
-                .addApi(Places.PLACE_DETECTION_API)
-                .enableAutoManage(this, this)
-                .build();
-
-        Bundle bundle = getIntent().getExtras();
-        latitude = bundle.getDouble("valLatitude");
-        longitude = bundle.getDouble("valLongitude");
-
+        // iconMap initialization
+        iconMap.put("clear-day", new String[] {"amusement_park", "zoo", "campground", "park", "stadium" } );
+        iconMap.put("clear-night", iconMap.get("clear-day"));
+        iconMap.put("partly-cloudy-day", new String[] { "night_club", "restaurant", "rv_park", "cafe", "florist"});
+        iconMap.put("partly-cloudy-night", iconMap.get("partly-cloudy-day"));
+        iconMap.put("cloudy-day", new String[] { "night_club", "restaurant", "rv_park", "cafe", "florist"});
+        iconMap.put("cloudy-night", iconMap.get("cloudy-day"));
+        iconMap.put("rain", new String[] { "art_gallery", "bowling_alley", "movie_theater", "aquarium", "bar" });
+        iconMap.put("snow", iconMap.get("rain"));
+        iconMap.put("sleet", iconMap.get("rain"));
+        iconMap.put("wind", new String[] { "library", "museum", "shopping_mall", "bookstore", "gym" });
+        iconMap.put("fog", iconMap.get("wind"));
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
                 // All your networking logic
                 // should be here
-                JSONObject json = getPlaces();
-                Log.d(LOG_TAG, ""+json);
+                for (int i = 0; i < weatherList.size(); i++) {
+                    Log.d(LOG_TAG, "LIST NUMBER: " + i);
+                    String icon = weatherList.get(i).getIcon();
+                    String[] vals = iconMap.get(icon);
+                    for (int j = 0; j < vals.length; j++) {
+                        Log.d(LOG_TAG, "TYPE: " + vals[j]);
+                        getPlaces(latitude, longitude, TEMP_RADIUS, vals[j]);
+                    }
+                }
             }
         });
 
@@ -93,7 +101,9 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
         //((WeatherRecyclerViewAdapter) mAdapter).deleteItem(index);
     }
 
-    public void createFromJSON( JsonReader jsonReader ) throws IOException {
+    public ArrayList<String> createFromJSON( JsonReader jsonReader ) throws IOException {
+        ArrayList<String> ids = new ArrayList<String>();
+
         jsonReader.beginObject();
         while( jsonReader.hasNext() ){
             final String name = jsonReader.nextName();
@@ -110,7 +120,9 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
                         final boolean isInnerNull = (jsonReader.peek() == JsonToken.NULL);
 
                         if( innerName.equals( "place_id" ) && !isInnerNull ) {
-                            Log.d(LOG_TAG, "PLACE_ID: " + jsonReader.nextString());
+                            String ID = jsonReader.nextString();
+                            Log.d(LOG_TAG, "PLACE_ID: " + ID);
+                            ids.add(ID);
                         }
                         else jsonReader.skipValue();
                     }
@@ -121,24 +133,24 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
             else jsonReader.skipValue();
         }
         jsonReader.endObject();
+        return ids;
     }
 
-    private JSONObject getPlaces() {
+    private ArrayList<String> getPlaces(double latitude, double longitude, int radius, String type) {
         final String AMPERSAND = "&";
         HttpURLConnection connection = null;
-        JSONObject data = null;
+        ArrayList<String> idList = null;
         try {
             // set query string
             String urlStr = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
             urlStr += "key=" + placesAPIKey + AMPERSAND;
             urlStr += "location=" + latitude + "," + longitude + AMPERSAND;
-            urlStr += "radius=1000";
+            urlStr += "radius=" + radius + AMPERSAND;
+            urlStr += "type=" + type;
             // open connection
             URL url = new URL(urlStr);
             connection = (HttpURLConnection) url.openConnection();
-
             connection.setRequestMethod("GET");
-            // TODO: arraylist
 
             if (connection.getResponseCode() == 200) {
                 // Success
@@ -147,11 +159,11 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
                 InputStreamReader responseBodyReader =
                         new InputStreamReader(responseBody, "UTF-8");
                 JsonReader jsonReader = new JsonReader(responseBodyReader);
-                createFromJSON(jsonReader);
+                idList = createFromJSON(jsonReader);
                 jsonReader.close();
             } else {
                 // Error handling code goes here
-                Log.d(LOG_TAG, "HTTP RESPONSE ! OK");
+                Log.e(LOG_TAG, "" + connection.getResponseCode());
             }
         } catch (NetworkOnMainThreadException e) {
             e.printStackTrace();
@@ -164,47 +176,23 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
                 connection.disconnect();
             }
         }
-        return data;
+        return idList;
     }
 
     @Override
     public void onStart() {
         super.onStart();
         Log.d(LOG_TAG, "onStart");
-        mGoogleApiClient.connect();
     }
 
     @Override
     public void onStop() {
         super.onStop();
         Log.d(LOG_TAG, "onStop");
-
-        // Disconnect the Google API client and stop any ongoing discovery or advertising. When the
-        // GoogleAPIClient is disconnected, any connected peers will get an onDisconnected callback.
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
-        }
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-
-    // get current place
-
-    // find places using elements from list
-
-
-    /*@Override
-    protected void onResume() {
-        super.onResume();
-        ((WeatherRecyclerViewAdapter) mAdapter).setOnItemClickListener(new WeatherRecyclerViewAdapter
-                .MyClickListener() {
-            @Override
-            public void onItemClick(int position, View v) {
-                Log.i(LOG_TAG, " Clicked on Item " + position);
-            }
-        });
-    }*/
 }
