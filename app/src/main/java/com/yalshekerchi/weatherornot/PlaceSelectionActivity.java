@@ -51,13 +51,13 @@ public class PlaceSelectionActivity extends AppCompatActivity implements
             buildGoogleApiClient();
         }
 
-        //Get Place objects using list of place-ids
-        ArrayList<String> idList = AppData.getInstance().getResultMap().get(position);
-        getPlaces(idList);
-
         //Initialize RecyclerView
         mAdapter = new PlaceRecyclerViewAdapter(new ArrayList<Place>());
         mRecyclerView.setAdapter(mAdapter);
+
+        //Get Place objects using list of place-ids
+        ArrayList<String> idList = AppData.getInstance().getResultMap().get(position);
+        getPlaces(idList);
     }
 
     protected synchronized void buildGoogleApiClient() {

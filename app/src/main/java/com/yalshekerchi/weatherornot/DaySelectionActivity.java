@@ -38,7 +38,7 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
     // webservices API
     private static final String placesAPIKey = "AIzaSyB6EemTJi9vn84xwhv-ukq3aLqZR7ZTl9E";
 
-    private static final int TEMP_RADIUS = 1000;
+    private static final int TEMP_RADIUS = 5000;
 
     final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
     double latitude = AppData.getInstance().getLatitude();
