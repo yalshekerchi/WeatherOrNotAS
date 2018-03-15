@@ -92,12 +92,11 @@ public class MainActivity extends AppCompatActivity implements
         //Disable Next Button
         btnNext.setEnabled(false);
 
-        buildGoogleApiClient();
+        if (mGoogleApiClient == null) {
+            buildGoogleApiClient();
+        }
     }
 
-    /**
-     * Builds a GoogleApiClient. Uses the addApi() method to request the LocationServices API.
-     */
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)

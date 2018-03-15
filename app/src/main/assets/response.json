@@ -1,0 +1,816 @@
+{
+  "html_attributions" : [],
+  "next_page_token" : "CoQC_QAAADNjb2AGk1DV0PCXjZdwLeD0_cDYJpAUfGPJWsbDGzCK6-TwdjhEyMbUvKV6VwNCUxoVpxgZFlhdAVrnAwbWdLw0Y5WPlHUghVKxSABNfr-x9HjoW8zMCUbkQmAYpPjqGe4N6QmkbGHXRmFMlMy7R75PkI2yw89ThNJ0iiJFT4O1FH4mcMJIa31h95aXHCgU_nFXs3RuEl4-eQOfxQH7g0cj8xzDDaNcKne8wskwTrlMvmsdbHPzIuaCPmm-sOV7CJ4qvJ76hCNYPaPvAmSPbD5EczbGsiMNPCwlZH_YEP6xkgdYdVTaC9v_QiXmYzLQcrg5dU_cf72R2VgSogM18rwSEOUn3VwFybZgYYt0oH-qBo8aFJsvjY6fFXGI1qjQjf857mA4y8bb",
+  "results" : [
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.45030099999999,
+          "lng" : -80.48319169999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.5070088,
+            "lng" : -80.37852509999999
+          },
+          "southwest" : {
+            "lat" : 43.3538599,
+            "lng" : -80.5741051
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+      "id" : "b5af92c505728532c37a48f9615239e2ce37351b",
+      "name" : "Kitchener",
+      "photos" : [
+        {
+          "height" : 1836,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/110986348888344036485/photos\"\u003eKiyan EB\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAOqjPt7ECFqSkArwY30qDi-jlVQmjT0eqWPXPktfEwNwHk7vxQ26VLY1wY-V25OD5bLJg4oxWvLkfDTtLWszFscEO5HOpe1QXoWEUxH2yCA4bw6MDHZv95RqeXIGewXA6EhABfXNN5iQRgK_IT8xXwEfUGhRJDBdCTzFHi53VvLH8AyB-g4tkzA",
+          "width" : 3264
+        }
+      ],
+      "place_id" : "ChIJBVHuA4z0K4gRS1Rf3-b4JZU",
+      "reference" : "CmRbAAAApyGkKyqiLGmcRUNcC0WzfaPzlS7kGtkT0WkRcml41psVkfucePApk9PRKncIfwtI6kJjTzTueW_ypy4RnNcypyRH64ay2KrnVeohWrz4QBYTW1DkARXm3jo6TAfidfuSEhC09adM7v2sQ8-zxv7d9uiXGhRtK2aP9bwIzAfQHFa7iC2umZxr3Q",
+      "scope" : "GOOGLE",
+      "types" : [ "locality", "political" ],
+      "vicinity" : "Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4763021,
+          "lng" : -80.5170078
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.47743613029149,
+            "lng" : -80.51614831970849
+          },
+          "southwest" : {
+            "lat" : 43.47473816970849,
+            "lng" : -80.5188462802915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "e0b66ef2f73aac821e6dc03f956eb7c56dce941f",
+      "name" : "Comfort Inn",
+      "photos" : [
+        {
+          "height" : 4128,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/114804272699689942919/photos\"\u003eSebastian Lee\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAWH4MH1Zu2j6lU9jx-vNTsLpzVnPxcfST-eByWY_sommmArV6_kfojpttVPkb_GfinZgvoY28v3qal8kSturXMYdWODUBwUrTV-2cw6OB9qi7bZIQ3dGZwIc4xh-wgAWeEhBz6D6TBAzTwJEZ6hbWMyIPGhQBWZUmye5QIiXLY2nXHIDJC3jrpQ",
+          "width" : 2322
+        }
+      ],
+      "place_id" : "ChIJg0b1TIrzK4gRNIixiGDColQ",
+      "rating" : 3.6,
+      "reference" : "CmRRAAAAOp5uZ_zC_Ug5JgwXSnzFlWA-ZwnA_xCXaKvWEDiF74LWTPj3a5ndopC3_gG0GUrO4Qt4e7AmOORi6lHDF1oZ2D2coZk_VhKAEr5AoxF-WaB7K8o_DJSC7X63OBnKFLy8EhCl-1hkIKSkAqGb3JEVWZ3uGhSyWbpowezTEVGBMMxPFKqw711-ew",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "190 Weber Street North, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.44966760000001,
+          "lng" : -80.4896076
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4509507802915,
+            "lng" : -80.48814651970849
+          },
+          "southwest" : {
+            "lat" : 43.4482528197085,
+            "lng" : -80.4908444802915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "cc81f103c6ee3dd243b8056179ae44d974112021",
+      "name" : "The Walper Hotel",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 800,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/100702600232770634976/photos\"\u003eThe Walper Hotel\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRXAAAAVqHvmjQ3rOYI_RYX1VQ8GsxT2nNWISqweAqtAtxt5JxF43Ag2eBGQIpOO-7u7S1YrglA4z3ob4oRzoXIwjpNKfD08yLiKb1GEaQnVC10FYxkGW0vTdiQRjpeRZM0En5ZEhAfeSSxWuuNU6saOtaPgog-GhRqTRfilUj5cwH3db3RNpcB6v7Tzg",
+          "width" : 1200
+        }
+      ],
+      "place_id" : "ChIJbcfKifL0K4gR-wHjEF3uXB0",
+      "rating" : 4.4,
+      "reference" : "CmRRAAAAL__J2uQIokSOVnwuz7rnKrsId4341oSzT8bpdyrMHsnrh87KRkDTJlupglLljdgMRrv2Xg6undAZSgmKgGrAgNirrQYgjsVpYq7q8FU0FeObsMj-H9qAhBOPS1tA3zkUEhBRVpC2qGxWZlQQzNJ9_sC_GhSJf8hqiBpxKidLV8rfS1Qo_sfdfg",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "20 Queen Street South, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.429222,
+          "lng" : -80.433483
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.43042893029151,
+            "lng" : -80.43221766970848
+          },
+          "southwest" : {
+            "lat" : 43.42773096970851,
+            "lng" : -80.4349156302915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "35b098e99769ae8cec13e628cc8e7b61510aacbf",
+      "name" : "Radisson KitchenerWaterloo",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 5312,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113282046530761353548/photos\"\u003eWaldemar Kozłowski\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAdg76uuQyHcIcjtsuC4F5F8ykAR0XkI28Hg9P2P3ad1xnNzD_dhD2ySYYluQ0i6o5UUdWrJYOKxAvVDTOL50_HJ56wvsgwaxJ-XSCKjUE4UuFfEjowPmIOotxvRsrm-dWEhAt-kr0fClDlGGGwxddbw3PGhTDqnv80yMRCOQajtME1dM6LWUKWQ",
+          "width" : 2988
+        }
+      ],
+      "place_id" : "ChIJvQG9EiCLK4gRDta9RpQiyBA",
+      "rating" : 4.1,
+      "reference" : "CmRRAAAAecNj6b1QMbjvJxoNfwx8y-D4-qo6X_BXBAT7SOm65SsYOS9w5W_3Hcykr_Zu1LQAZisd9ObIK94Rm9cxdfCu3RhKP-SQh1c37qnUS8aWEOMXqy157xN-r1DETGZZKYSeEhCekDLxudz35qqr1IKojDGWGhSVSwjmOOHRNvoYc0-tAZSBEeeG2w",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "2960 King Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.50652949999999,
+          "lng" : -80.5550877
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.5078784802915,
+            "lng" : -80.55373871970849
+          },
+          "southwest" : {
+            "lat" : 43.5051805197085,
+            "lng" : -80.55643668029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "4c86eb13a49935fd71590ff79e4b010702e26b94",
+      "name" : "Courtyard by Marriott Waterloo St. Jacobs",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 423,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/112904533938878183559/photos\"\u003eCourtyard by Marriott Waterloo St. Jacobs\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAA6xNV-My3zRwQvoLMlGCjxVQoDYeB2Sn_8UiIdcfhSdvpgFijK9ShSWL6J1_P1xh4nA45YS-NM_Ymcvf1-yXIdcwwyLy1WDv3Zmfq90CBNSyo0rGfSDzrqKdFWBGdSxQFEhAiDcdA2vNUycWIEPKDZiM6GhS6FflqTRZogRokdxEoj5Q4f8wVAQ",
+          "width" : 610
+        }
+      ],
+      "place_id" : "ChIJYYRqn3rxK4gRckjUNlrXdEI",
+      "rating" : 4.2,
+      "reference" : "CmRRAAAAffMhGAyGU_6z93B5GHgdfvRIvJ5k6TUw2OGARzdttbeCc_Ab7RwsGuBEqUi_kOBMS2Am1XDjWkVGimsVNxK2bfhmnYq80jgkRgW77DEejzOn5-nAqevf_hK5Wj3Yv_Q1EhB_ugLaJkHwPNj0MqQ6VG2OGhR_sp2rXwCeq8yWGhzaVur7C8cpUg",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ],
+      "vicinity" : "50 Benjamin Rd, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.43270260000001,
+          "lng" : -80.4431048
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4344596302915,
+            "lng" : -80.4419091697085
+          },
+          "southwest" : {
+            "lat" : 43.4317616697085,
+            "lng" : -80.4446071302915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "ee76214a1dd019e8861aa37c760fc90ea028ac32",
+      "name" : "Howard Johnson - Kitchener Conestoga",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1000,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/116459709687178359365/photos\"\u003eHoward Johnson - Kitchener Conestoga\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAARSaRWtDSh0ARcX2VAyTzf9SMhTXIfa3TnpuhCOyie8SqKn5-omD-rLzBz-709pK0MXHfiUc235tih8PnYEW8mceb2P-X6aCgba8ZkL3GiWQs7L40H4GhdP120pKodNXCEhAfZlGBcjyHZf62X0_7IMOOGhReDOyJ2NeXv3rRKqF870iizqr6lw",
+          "width" : 1499
+        }
+      ],
+      "place_id" : "ChIJS9rccCaLK4gRWZtHRiuDynk",
+      "rating" : 2.7,
+      "reference" : "CmRRAAAAwXuGcIZfPnpMY0WJr_vZzAJUXLDpseGv7VCMy5od5DLANt6JYeOcYSVtxMuf9boYouQQS4Eq6yN896g0KuFOiptL5Vl41v4O8b3tHWwWO6TNWqD70EElUhsf2KlGMC3SEhA1xfeRLw2Z9-8AxeHBesYPGhQdbK0UlWuzM9--IHViTMYjbF724A",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "1333 Weber Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4289997,
+          "lng" : -80.4348789
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4304836302915,
+            "lng" : -80.43344946970849
+          },
+          "southwest" : {
+            "lat" : 43.4277856697085,
+            "lng" : -80.43614743029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "e4334bdbb406a8a3fa4c50273e08ed2f5d68f3c2",
+      "name" : "Fairway Inn & Suites",
+      "photos" : [
+        {
+          "height" : 1440,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/112046392839380460292/photos\"\u003esiva sithy\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAUoz0iY3xxvCSvYK6Il-iE5g3rHcGGlwkcPaymhp3kUOw076DWz-tdSNw22Rm9qHIf3qhQP1oDB7GQcCx4Vo2ykWO4aAPdVR2u3yPv2aloB9SOYI0mZQhu_PWI43d-aceEhDddN54vBDmGozzUoJ6El4qGhTrXZvSJUYExzmD7x_khcnTF9JmvA",
+          "width" : 2560
+        }
+      ],
+      "place_id" : "ChIJW8UAbyCLK4gRKWkaIlWzzPI",
+      "rating" : 2.5,
+      "reference" : "CmRSAAAAZhHe6rO4knsGjnJVsiHvWO5fmRRiuV-obRs-GmP-jGm70fukgWI3rblgnnxvP7S7RRA2jTVvbUnJvln5APdcLmKMa9aqVGjPIZkWuCT7d1C5cZ_42fucQAgNk43Mdl6zEhAhIeRjkDviizByJSrJFrC2GhRKsXeB0Nez8USUURLJjDqHEBKqoA",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "2933 King Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.45436220000001,
+          "lng" : -80.4809293
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4556396302915,
+            "lng" : -80.47950711970849
+          },
+          "southwest" : {
+            "lat" : 43.4529416697085,
+            "lng" : -80.48220508029149
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "c4decf3e55da9947c617d6f7c5952035f7cd223b",
+      "name" : "Frederick Street Inn",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 428,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/106442607378155830583/photos\"\u003eFrederick Street Inn\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAZJlIRvPQG8-IU0fM7Zy5IN---hII7aBvPmWP402iN7oyxlUgsEBIgPQb2LiCMRJiEoLvZbRmuBYgRWzM6eyCMXdDjT7E4sF5IUA-AApaFZoBhSUaFWQDE3DITcyx-UlIEhByftV2Rikp1YwFPVyKNzaKGhQgdf1jhGc-heVR1A8e3eJEakmGSA",
+          "width" : 640
+        }
+      ],
+      "place_id" : "ChIJyXyaW5T0K4gRueIn9jUKflI",
+      "rating" : 4.8,
+      "reference" : "CmRRAAAA3I25_kXdIrLYRnrloU6MXPKMixTe6GEeOwZ4YNJ25C3Osj8uzYB3COdrD3LGSh-mMmyxk00c9aNpx61ccR_I1AJX6GAiNB51XQ13aoHJXXPuFPrW736i0RFqR9TiEuooEhAdHGPqCbEAZL2o_wUQ5Q0YGhRi3BuVuyQghOVVsW9O1U8UWQfxlQ",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "230 Frederick Street, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.429177,
+          "lng" : -80.43687899999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4308416302915,
+            "lng" : -80.43528251970849
+          },
+          "southwest" : {
+            "lat" : 43.4281436697085,
+            "lng" : -80.4379804802915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "aa6d634fbe6f6ce1d66e28bf71cfa58db4e4acbe",
+      "name" : "Best Western Plus Kitchener-Waterloo",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1991,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/116493447841502331822/photos\"\u003eBest Western Plus Kitchener-Waterloo\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAhB894VPtHNQFX5pd_v6KDB-8XS-torG7CDyPBJCcaC2xrFrShrs0Ltvj3ap-0rVBVU-0zH6vdb3WVX-BcDWoqFDCySjwbnKPWkEiD2J7-co8d6xBNeEmqyRuYND4qYsFEhBxs8rg7ys9_aeYraa62CFhGhT8neFrcwmDA3G-ZTuciouIAkBZjA",
+          "width" : 3839
+        }
+      ],
+      "place_id" : "ChIJA3Sq7CCLK4gR1sqAdsZt4Jg",
+      "rating" : 3.8,
+      "reference" : "CmRSAAAAzef558ikRZDyFJl9qN7j1qZeDxACItFRdzFPpvEYKRN-NXrRY4dBOKZAiCu495RqxsnnFymrjLtgr3Ig5I8xkYP3JGqage30b3Nd1rw3pZbmHsr3h_l0qZPXiM1yt3xdEhB1Ccb-PbGZx7ZnVBm5z_5GGhSY73XhVahkla8zqTK7d5VrKHyZ0A",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "2899 King Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4745585,
+          "lng" : -80.5241394
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4758815302915,
+            "lng" : -80.52303106970849
+          },
+          "southwest" : {
+            "lat" : 43.4731835697085,
+            "lng" : -80.52572903029152
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+      "id" : "087ed2d1c5a3ea7c8cf741f26325c81fc03186e9",
+      "name" : "Hotel Laurier - King Street Residence",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1536,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113006274334026632179/photos\"\u003eFadi Waseem\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAZWiS_9mKGosByDvpNjnBc84VGJljJP4qcdj5QSf7UfINNOcBBmyyj9qrwrpUYKLE7OVRHzKuvbpEwikVXIJcJ7NfIZCZGilCxbhSc5fvnEYWZVSyA5S_eIODKSSAC6ugEhBdoCHk3cbjdNjfVCXt62NuGhS2PpNSRTJtQTf2WW8eauRw_vtEEQ",
+          "width" : 2048
+        }
+      ],
+      "place_id" : "ChIJqRw-fgr0K4gREtfCsZX4s60",
+      "rating" : 4,
+      "reference" : "CmRSAAAA1tEB4PhGRsVEobwRyeb-wKMnx5sDHf5o4_fgfpiSd0wCABNiWq-e4HFVdUnA4C20nOjyqbUrEfv8KqZ0wbyrDErj1ia3KI5jD12H0k0sbOiTdDiv4XL92gm13k33VjEwEhARgDEJTtWwHrcTyxvkQcvaGhRsLpCSO01RW6_HF8uDqi1ZbBLHrg",
+      "scope" : "GOOGLE",
+      "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+      "vicinity" : "200 King Street North, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4868344,
+          "lng" : -80.53603269999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4880885302915,
+            "lng" : -80.5346250197085
+          },
+          "southwest" : {
+            "lat" : 43.4853905697085,
+            "lng" : -80.53732298029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "81330168697ad393f26a7f21f20d4ee448dd9f1a",
+      "name" : "Les Diplomates B&B (Executive Guest House)",
+      "photos" : [
+        {
+          "height" : 1536,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113481757334865111147/photos\"\u003eLes Diplomates B&amp;B (Executive Guest House)\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAE7HdwjmMJSMCSvK8lz0hZhEa01jupNud7SkulSmvb907k8FCgFY41RjJU-xo6ee1t5Oqx7AB1ugzu4CaVUwQw1MghfPQ-eQEQYDbfNGpTrGJfEcA0bh8guyy1_kDLGkIEhC8BYI-yLzXrJsqo3c0QShuGhQS1vSFchJxVtCEkC6hoyGZAVlgpw",
+          "width" : 2048
+        }
+      ],
+      "place_id" : "ChIJ8Yvi--TzK4gRFZM4ydtbcZ4",
+      "rating" : 4.9,
+      "reference" : "CmRSAAAAuqthJ8hz3WJLZoas_-C82kDsH2qwZHaOKhisT3ZVRA-f_E7K2GZKGUBRx_mr9Mjr_NifPqFtEmydBx_6BwXKzt5FHwFDs5G7xYMTaavMrxFSx4vYcDaei72H0EsC6TykEhCHhfKRmgbWX3GfnCZD64zkGhS9AoTlcswi2lXTbHuwN3Dm9HhGoA",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "100 Blythwood Road, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4671667,
+          "lng" : -80.4541694
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4686126802915,
+            "lng" : -80.45287831970849
+          },
+          "southwest" : {
+            "lat" : 43.4659147197085,
+            "lng" : -80.45557628029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "941bbab547b60fa774d89d75bea377f5799caf94",
+      "name" : "Canadas Best Value Inn",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 2988,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/107682291379161239980/photos\"\u003eJjj Jjj\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAA6hlj9ARhKnRE5TKAdqpue0wo_lgllAiZtiGEnCBBNH5dkjIFbYULtU37rYZF-3HXXUVGZkaUTHzBReMnFsd0JT68fitfRjrh_rrHNQexbAzaos-XAt8JXWrZZJohsB1lEhAIArihoKB6ASaeHKsjG5UxGhTIRoIdM7tALXK41X1OIRhKpdTJVQ",
+          "width" : 5312
+        }
+      ],
+      "place_id" : "ChIJQT98SlWLK4gR1q8Bra9jr8w",
+      "rating" : 2.4,
+      "reference" : "CmRSAAAAe9b_j3LZmoh2QE-mH8_33VwChSNOg7p7BFfNxxhadZR1oQUwOi1TntICwLsj1WNfAo3bYaUvZwpzvA5M882UWDioNzBNfZ5LHfBoOUiXv89yKhw8U8g0GaqEX7tkmhfaEhDlwsGzuLozzH-ESQm7e5CeGhSM4zSIMzPitNaTSOkKOOnq5g5YFQ",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "1175 Victoria Street North, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.42757389999999,
+          "lng" : -80.4342795
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4288753302915,
+            "lng" : -80.43204735
+          },
+          "southwest" : {
+            "lat" : 43.4261773697085,
+            "lng" : -80.43502354999998
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "0521cbafbabfe4405090856d9cc7fb1bb3075e0c",
+      "name" : "Holiday Inn Kitchener-Waterloo Conf. Ctr.",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 333,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/115361351145176262979/photos\"\u003eHoliday Inn Kitchener-Waterloo Conf. Ctr.\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAABcA7-lrs2ypNwxLsP_SVTIS5bA5LuOiok92GHi_xdrbhJJur-D3bc5Wj-mh8lvO-ruSsYMo0pNzAPuWF54A3BXl3eTYqDr34wylZUo9Rr0jYZohjAsAMMEFRRpL2o0GMEhAcbOmzf_YBlDQHa9cOOpefGhT4vX5hAeOsgZ1PDr8npy7yOROq5g",
+          "width" : 500
+        }
+      ],
+      "place_id" : "ChIJjV19Od6KK4gRECe75W0IPcs",
+      "rating" : 3.9,
+      "reference" : "CmRSAAAAsF15w6SLItPd_xnQp8ocDuqSWBz1YYRM2kZXU-OLpPfd3W5YnS9nzAumgs9gR7xx95DFu50D_pxWxHmPlGQmLgsDahz-Tv3ZR7FWp2FlIfyiv9rKY-FBApUQgyXjpatHEhAlwYHQALElRO6j5NLzTgO-GhSypWW3BsC3W-TUmJtMaGUs-_XHpA",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "30 Fairway Road South, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.43112129999999,
+          "lng" : -80.4387567
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.43261513029149,
+            "lng" : -80.43715466970849
+          },
+          "southwest" : {
+            "lat" : 43.4299171697085,
+            "lng" : -80.4398526302915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "4e9eb62af7aa7ff7704360bcb95c2240ee188b36",
+      "name" : "Knights Inn Kitchener",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 1000,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/104118863196355553808/photos\"\u003eKnights Inn Kitchener\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAJKz3UBhVniCjKBdUM7xoLArkLLB2BOTxtx5cSAs6dXIEh4UUPZhFdW4TZF9lkvuxoGS2vh414e4E41-hnUBSmGBoHoCd9SMcW1SYB_v-6HFlzK_xj6oqu4_TZmgO7l6MEhAOKKYfxDnt6UQEw_-m4GhkGhT0j5uizUymQQXBzo0cN3s-h9ZWuw",
+          "width" : 1499
+        }
+      ],
+      "place_id" : "ChIJfe1yLyeLK4gRRPdabmluQLg",
+      "rating" : 2.5,
+      "reference" : "CmRSAAAA1HnowzJSXUIeRzyUDiRAe-yUrRQ-swVklkUMvqlbDb39rtDZHMQ-1Wyq95PKz3EHgfrl-_xpL91NHn-UKruLtXLpXoRDeBZSOgCBjuwYbagPYheQ1JpOAZqNPUDLSvJ-EhDMqEbxhZT5FCc3c1sW3lT2GhR4-wnQXOXPbL8pixe4BItIcL8bVw",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "1455 Weber Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.5088903,
+          "lng" : -80.5563562
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.5099830802915,
+            "lng" : -80.55449816970849
+          },
+          "southwest" : {
+            "lat" : 43.5072851197085,
+            "lng" : -80.5571961302915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "f4ab13c4906e4ab048eb71e22d135946a382024f",
+      "name" : "Holiday Inn Express & Suites - Waterloo/St.Jacobs",
+      "photos" : [
+        {
+          "height" : 533,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/108137608127502336666/photos\"\u003eHoliday Inn Express &amp; Suites - Waterloo/St.Jacobs\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAnICcTuHYQaddITthSXg1ao4kqHInWZMjlGh31iEoj8NZigOb9-munOYVYAXHKUyxIrwM2Kz61pXGUNs6D8jC6LdIjP_ip26B4M0egreT8GTXEYqpZ8j9eOmU57lRGfasEhDEz8UAOKsv5OUYExS9ZEfyGhQHNIKgd2zK_Eda3M-mquKwfRtysQ",
+          "width" : 800
+        }
+      ],
+      "place_id" : "ChIJY97CmHDxK4gRVr7XfX7H26w",
+      "rating" : 3.9,
+      "reference" : "CmRSAAAAdEFUxOUnEaAwtQiohzJA9vZ_CQ0uNYQUlgyo_6sQjFnAdd7egPo93T7QPAZBY6ZU2-JZ0M15xFru5jbjsDtExH-77ql1vxuF1AZBcHoWNtY-G4M2wt9iK7ieajLog7BlEhCS5PqV74cu0hg0Enl8rH8tGhTKlmBU5bpbuDvb1aYegnYoGYz64g",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "14 Benjamin Road, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4489024,
+          "lng" : -80.48744189999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.45032173029151,
+            "lng" : -80.48603676970849
+          },
+          "southwest" : {
+            "lat" : 43.44762376970851,
+            "lng" : -80.4887347302915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "ff29cafd39567fdff0073381618e7747a25e7768",
+      "name" : "Crowne Plaza Kitchener-Waterloo",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 2667,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/115945215059766050322/photos\"\u003eCrowne Plaza Kitchener-Waterloo\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRXAAAATYZgiVdELYiuJ5VQR8pxI8Y8E6-NiZz37SRSeY58p5DnZSgHsUuuW7YXeG9tisAtulVrfHXlSPBC3mr_EPd3LXnzSV5OnyEBk104knFlooA1FPyzzXbafGDfmkStaaNYEhC1cjxuvOguLNEJAOdQoLpGGhTBroWhUUfU7XmEEBkY83Shzsibpg",
+          "width" : 4000
+        }
+      ],
+      "place_id" : "ChIJ__fmi-30K4gRNgW5Hzez1F8",
+      "rating" : 4.1,
+      "reference" : "CmRRAAAAMkM9031xz0I9I3n7wbNSUrDkIRckNPZap_gQndvr46ArfNNzU1TkSisOAwmGR6FoxI2esh2FOV1zJcjozgqN2PjHgh-BuQzA1-8UqCXc6LNWWFv9kZ-h64O8abg0irNdEhDdleSRzOQfiZVAcIi2_LoSGhTsmYpV9yftpmznTdN-hgHVT1gWBg",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "105 King Street East, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4991259,
+          "lng" : -80.531779
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.50068268029149,
+            "lng" : -80.5300832197085
+          },
+          "southwest" : {
+            "lat" : 43.49798471970849,
+            "lng" : -80.53278118029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "5f228ffcb4cac5fce02af6d0d4c68962a5c442bc",
+      "name" : "Four Points by Sheraton Waterloo - Kitchener Hotel & Suites",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 3264,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/109256785474349989288/photos\"\u003eMichael Uray\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAt35T71mOaXTfAllMVvgdcdLZP9W_rV89KV1aYivZkY7hb9iBPk5Ch8jKk1WjWAJTon8PaIq88CMXoGqtHhXrdATjyyE0UfcREWot9SsVP6eGbULHwUCv569L1r8DIXsUEhBs01KrVcBItIqGUMgX4xFMGhQNQ2VGEbGWSuj7J0R5vsOsMfgrjA",
+          "width" : 1840
+        }
+      ],
+      "place_id" : "ChIJ93-QmcTzK4gRMRrcLIgrio0",
+      "rating" : 3.9,
+      "reference" : "CmRSAAAAIiEePgfPS_9COQI5GbdICpYZjPcS6ppTpS__Qe0fucX7mGqyVBXLTxVK1sXVELaQQRBCaFCaylUhSEQ08oKbEjsFX7RbNocJfPRW47QYV4vNOp6WKCzuhcnuV21WrLqhEhCOEmk5qMvA4HfkH_KpWN5nGhQ54gvOOH1PzG0hBkFy_Mk54rAdgg",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "point_of_interest", "establishment" ],
+      "vicinity" : "547 King Street North, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4477787,
+          "lng" : -80.57384549999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4491276802915,
+            "lng" : -80.57249651970848
+          },
+          "southwest" : {
+            "lat" : 43.4464297197085,
+            "lng" : -80.5751944802915
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+      "id" : "b1f5743ae8c7adc99d58e14891a658353e440fd8",
+      "name" : "Canadian Tire",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 2988,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/114985384130926830518/photos\"\u003eAndre Luiz C A Reis\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRXAAAAsp69vcte1BY24vk4qKcE464ULkfzn2Xcsq2n--UD9QJaTWy1jyf2nMtERuN0hPR6s-bjMvH5iaUDUEts06Z2zlEF7GSSX2BZTKY29PaBsxvR1PtTXKb93mtcfQXNv5YFEhBEwwX1NLszCcu4zYQG7jnwGhQfiOGQyGcF2HttnZlHryViW_4LAA",
+          "width" : 3984
+        }
+      ],
+      "place_id" : "ChIJuekhg_H2K4gRFuPXSj6YdiY",
+      "rating" : 3.3,
+      "reference" : "CmRRAAAAYb_xeFgEL8c3EiCUAlZLozQLPeLJyawRvpquFJ3NFSjijFGgZoyMkCwgvQjkBFNz4HVzj4WklRYFqumY4hgYHri-8Qu16BD2z4lhhmrB2wp6iUjatnhnsLBm9qYbLDjaEhAmniCPNsBdHemNWfYr2z7nGhRGd_7QtF2QwVh55GyNmqrxz5sxZQ",
+      "scope" : "GOOGLE",
+      "types" : [
+        "home_goods_store",
+        "hardware_store",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity" : "656 Erb Street West, Waterloo"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.45222,
+          "lng" : -80.516678
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.4535003802915,
+            "lng" : -80.5155176197085
+          },
+          "southwest" : {
+            "lat" : 43.4508024197085,
+            "lng" : -80.51821558029151
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+      "id" : "38466dcfcd25b4109876f3b7a39c2304b7fdab20",
+      "name" : "Tim Hortons",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "photos" : [
+        {
+          "height" : 4048,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/114132466503756295302/photos\"\u003eKarl Gingerich\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAi6gNALtR1Is2XHxBCDjvZYYudFf_1NTeY2ev0WBostIOfbOBUWZXf4NmsBJ8_TT8r7F1GeC1joANvYRR33ba4s-w_rLeohQCt-IsctbUnvkfBggWSywjoP4oInhUo7FiEhAGOhOWcY24OuLt2P_oZC1JGhRNRTy1i5VthcA78EFd4qffzRQEVg",
+          "width" : 3036
+        }
+      ],
+      "place_id" : "ChIJk-donkH0K4gRPKIuQKwD2Sc",
+      "price_level" : 1,
+      "rating" : 3.2,
+      "reference" : "CmRRAAAABHzSSEEEdklsxRFHQO5rFe_0C70_dzJP1p5drttPdkM3EWVrthFMU_hQkmjo3NvQ9AfNzgS4n6eerzG4HW_fpdhQNYIL-hYoHJ2KPnYowlcPM3ooE_DQb6997dyWxaZZEhC49JnZnGNuvTOVeOyBmdcEGhSoG1II8s215cy2EJnlEGZOWvNBvw",
+      "scope" : "GOOGLE",
+      "types" : [
+        "bakery",
+        "cafe",
+        "restaurant",
+        "food",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity" : "638 Belmont Avenue West, Kitchener"
+    },
+    {
+      "geometry" : {
+        "location" : {
+          "lat" : 43.4642578,
+          "lng" : -80.52040959999999
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 43.5317799,
+            "lng" : -80.46729289999999
+          },
+          "southwest" : {
+            "lat" : 43.4326571,
+            "lng" : -80.6261459
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+      "id" : "67a11386eaad1442f950a8ddbc8bea2a8ab31dee",
+      "name" : "Waterloo",
+      "photos" : [
+        {
+          "height" : 2592,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113014418051049704015/photos\"\u003eDanielle Frey\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRYAAAAMuSfuUx1OeyREQ7JWq38ZHVonxV305i-guoDHWsvUrNDOntIfCjWl6BsYxwYPGHYY56gnRDSzC5kAbPbcypgoCozFKPR2M-bhJHLV1GZ_sNNV_HXhaZdR5yEAm_pI7B9EhCCIEj4s10ZwDPrPUs2zmguGhRzoJRYklj1ayODNzrnEf5dJZZv0A",
+          "width" : 4608
+        }
+      ],
+      "place_id" : "ChIJK2f-X1bxK4gRkB0jxyh7AwU",
+      "reference" : "CmRbAAAA0gtDYvJJ2byUyLC78aoBbbF_GLF4UqY-a3BIR2sbVfmg8m5YUqgBDP8x9TB3fo1z1W7Ed0RjdryNp0CW25saGw0WQkQntdO0xQV3SA_q-ply-zUYO-yutbmeiKqw1MCKEhArEdx5wZppdUR80SJo7sJRGhSyihk-JqJws9qVEV-4IDygZsPJOw",
+      "scope" : "GOOGLE",
+      "types" : [ "locality", "political" ],
+      "vicinity" : "Waterloo"
+    }
+  ],
+  "status" : "OK"
+}

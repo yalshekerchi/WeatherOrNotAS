@@ -36,9 +36,9 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
     private static String LOG_TAG = "DaySelectionActivity";
 
     // webservices API
-    private static final String placesAPIKey = "AIzaSyDf0oPYWc5ePlr-CfyuAv75AbB7uHRdpSg";
+    private static final String placesAPIKey = "AIzaSyB6EemTJi9vn84xwhv-ukq3aLqZR7ZTl9E";
 
-    private static final int TEMP_RADIUS = 1000;
+    private static final int TEMP_RADIUS = 5000;
 
     final ArrayList<DataPoint> weatherList = AppData.getInstance().getWeatherList();
     double latitude = AppData.getInstance().getLatitude();
@@ -57,13 +57,33 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
                 // should be here
                 for (int i = 0; i < weatherList.size(); i++) {
                     Log.d(LOG_TAG, "LIST NUMBER: " + i);
+
+                    //Initialize new ArrayList in map
+                    AppData.getInstance().getResultMap().put(i, new ArrayList<String>());
+
+                    //Get weather icon and types associated with it
                     String icon = weatherList.get(i).getIcon();
                     String[] vals = AppData.getInstance().getIconMap().get(icon);
+
+                    //Iterate through each type
                     for (int j = 0; j < vals.length; j++) {
                         Log.d(LOG_TAG, "TYPE: " + vals[j]);
-                        getPlaces(latitude, longitude, TEMP_RADIUS, vals[j]);
-                        // TODO: create final map structure { 1, {id1, id2, ...}
+
+                        //Get ArrayList of place-ids
+                        ArrayList<String> idList = null;
+                        try {
+                            idList = getPlaceIDs(latitude, longitude, TEMP_RADIUS, vals[j]);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        //Remove duplicates and all ids into resultList
+                        ArrayList<String> resultList = AppData.getInstance().getResultMap().get(i);
+                        resultList.removeAll(idList);
+                        resultList.addAll(idList);
                     }
+
+                    Log.d(LOG_TAG, "Array: " +  AppData.getInstance().getResultMap().get(i).toString());
                 }
             }
         });
@@ -76,7 +96,7 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-
+        //Initialize RecyclerView
         mAdapter = new WeatherRecyclerViewAdapter(AppData.getInstance().getWeatherList());
         mRecyclerView.setAdapter(mAdapter);
 
@@ -87,7 +107,7 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
         //((WeatherRecyclerViewAdapter) mAdapter).deleteItem(index);
     }
 
-    public ArrayList<String> createFromJSON( JsonReader jsonReader ) throws IOException {
+    private ArrayList<String> createFromJSON( JsonReader jsonReader ) throws IOException {
         ArrayList<String> ids = new ArrayList<String>();
 
         jsonReader.beginObject();
@@ -122,10 +142,23 @@ public class DaySelectionActivity extends AppCompatActivity implements GoogleApi
         return ids;
     }
 
-    private ArrayList<String> getPlaces(double latitude, double longitude, int radius, String type) {
+    private ArrayList<String> getPlaceIDs(double latitude, double longitude, int radius, String type) throws IOException {
         final String AMPERSAND = "&";
         HttpURLConnection connection = null;
         ArrayList<String> idList = null;
+        /*
+        try{
+            InputStream inputstream = getAssets().open("response.json");
+            InputStreamReader responseBodyReader = new InputStreamReader(inputstream, "UTF-8");
+            JsonReader jsonReader = new JsonReader(responseBodyReader);
+            idList = createFromJSON(jsonReader);
+            jsonReader.close();
+        } catch (Exception e){
+            //pass
+        }
+        */
+
+
         try {
             // set query string
             String urlStr = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
